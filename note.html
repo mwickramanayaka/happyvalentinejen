@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Note to my baby Jen ❤️</title>
+  <link rel="icon" type="image/png" href="images/fav.png" />
+  <link rel="stylesheet" href="css/vday.css" />
+</head>
+
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+
+  <div class="container">
+    <nav>
+      <div class="brand"><span class="dot"></span>For You baby</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="memories.html">Memories</a>
+        <a href="https://mwickramanayaka.github.io/bemyvalentinejen/">Be My Valantine Jen</a>
+      </div>
+    </nav>
+
+    <section class="card">
+      <div class="h1">A little <span>note</span> for you 💌</div>
+      <p class="sub" style="margin-top:14px; opacity:.9">
+        Read this slowly. It’s from my heart.
+      </p>
+
+      <div style="height:18px"></div>
+
+      <div class="note">
+        Jen
+        Happy Valentine’s Day, baby ❤️
+
+        I know I’m not perfect, but my love for you is real.
+        I choose you on the easy days, and on the hard days.
+        I want to keep growing with you, learning you, and loving you better.
+
+        Thank you for being my happiness, my excitement, and my favorite person.
+        You’re my cutest blessing… and my sweetest home.
+
+        I love you.
+        Always.
+
+        Your babi Manul
+      </div>
+
+      <div style="height:14px"></div>
+
+      <div class="cta">
+        <button class="btn" id="playBtn" type="button">Play our song 🎵</button>
+        <a class="btn secondary" href="index.html">Back</a>
+      </div>
+
+
+      <audio id="song" preload="auto">
+        <source src="love.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
+
+    <footer class="footer">Made with ❤️ by Your Baby</footer>
+  </div>
+
+  <script>
+    (function () {
+      const hearts = document.querySelector('.hearts');
+      const count = 18;
+      for (let i = 0; i < count; i++) {
+        const h = document.createElement('span');
+        h.style.left = Math.random() * 100 + 'vw';
+        h.style.animationDelay = (Math.random() * 4) + 's';
+        h.style.animationDuration = (6 + Math.random() * 6) + 's';
+        h.style.opacity = (0.4 + Math.random() * 0.5);
+        hearts.appendChild(h);
+      }
+
+      const btn = document.getElementById('playBtn');
+      const audio = document.getElementById('song');
+      let playing = false;
+
+      btn.addEventListener('click', async () => {
+        try {
+          if (!playing) {
+            await audio.play();
+            playing = true;
+            btn.textContent = 'Pause ⏸️';
+          } else {
+            audio.pause();
+            playing = false;
+            btn.textContent = 'Play our song 🎵';
+          }
+        } catch (e) {
+          btn.textContent = 'Tap again to play 🎵';
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories ❤️</title>
+  <link rel="icon" type="image/png" href="images/fav.png" />
+  <link rel="stylesheet" href="css/vday.css" />
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+
+  <div class="container">
+    <nav>
+      <div class="brand"><span class="dot"></span>For Jen</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="note.html">Note</a>
+        <a href="https://mwickramanayaka.github.io/bemyvalentinejen/">Be My Valantine Jen</a>
+      </div>
+    </nav>
+
+    <section class="card">
+      <div class="h1">Little <span>memories</span> I want to keep forever ✨</div>
+      <p class="sub" style="margin-top:14px; opacity:.9">
+        I picked a few moments that remind me of you 💗 fun, pretty, and unforgettable.
+      </p>
+
+      <div style="height:18px"></div>
+
+      <div class="grid">
+        <a class="tile" href="images/1.png" target="_blank" rel="noreferrer">
+          <img src="images/1.png" alt="Memory 1">
+          <div>Us, but in a photo 💗</div>
+        </a>
+        <a class="tile" href="images/2.png" target="_blank" rel="noreferrer">
+          <img src="images/2.png" alt="Memory 2">
+          <div>Your smile = my calm</div>
+        </a>
+        <a class="tile" href="images/3.png" target="_blank" rel="noreferrer">
+          <img src="images/3.png" alt="Memory 3">
+          <div>Small moments, big feelings</div>
+        </a>
+        <a class="tile" href="images/4.png" target="_blank" rel="noreferrer">
+          <img src="images/4.png" alt="Memory 4">
+          <div>My favorite view 😌</div>
+        </a>
+        <a class="tile" href="images/5.png" target="_blank" rel="noreferrer">
+          <img src="images/5.png" alt="Memory 5">
+          <div>More of this, always</div>
+        </a>
+        <a class="tile" href="images/6.png" target="_blank" rel="noreferrer">
+          <img src="images/6.png" alt="Memory 6">
+          <div>Soft love, loud heart</div>
+        </a>
+        <a class="tile" href="images/7.png" target="_blank" rel="noreferrer">
+          <img src="images/7.png" alt="Memory 7">
+          <div>My safe place is you</div>
+        </a>
+        <a class="tile" href="images/8.png" target="_blank" rel="noreferrer">
+          <img src="images/8.png" alt="Memory 8">
+          <div>Forever kind of vibe</div>
+        </a>
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="note.html">Next: the note →</a>
+        <a class="btn secondary" href="index.html">Back</a>
+      </div>
+    </section>
+
+    <footer class="footer">Made with ❤️ by Your Baby</footer>
+  </div>
+
+  <script>
+    (function(){
+      const hearts = document.querySelector('.hearts');
+      const count = 18;
+      for(let i=0;i<count;i++){
+        const h = document.createElement('span');
+        h.style.left = Math.random()*100 + 'vw';
+        h.style.animationDelay = (Math.random()*4) + 's';
+        h.style.animationDuration = (6 + Math.random()*6) + 's';
+        h.style.opacity = (0.4 + Math.random()*0.5);
+        hearts.appendChild(h);
+      }
+    })();
+  </script>
+</body>
+</html>

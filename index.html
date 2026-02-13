@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine’s Day, Baby ❤️</title>
+  <link rel="icon" type="image/png" href="images/fav.png" />
+  <link rel="stylesheet" href="css/vday.css" />
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+
+  <div class="container">
+    <nav>
+      <div class="brand"><span class="dot"></span>For My Baby</div>
+      <div class="navlinks">
+        <a href="memories.html">Memories</a>
+        <a href="note.html">Note</a>
+        <a href="https://mwickramanayaka.github.io/bemyvalentinejen/">Be My Valantine Jen</a>
+      </div>
+    </nav>
+
+    <section class="card hero">
+      <div>
+        <div class="h1">Happy <span>Valentine’s Day</span>, Jen ❤️</div>
+        <p class="sub">
+          I made a tiny website just for you. Open it, smile, and remember, you’re my favorite person.
+        </p>
+
+        <div class="pill" id="countdown">Loading countdown…</div>
+
+        <div class="cta">
+          <a class="btn" href="memories.html">Start →</a>
+          <a class="btn secondary" href="note.html">Go to the note</a>
+        </div>
+
+        <p class="sub" style="opacity:.85; margin-top:14px">
+          When Valentine’s Day officially begins, it’s the moment I choose you all over again.        </p>
+      </div>
+
+      <div class="center">
+        <img src="jen.gif" alt="Cute gif" class="gif" />
+        <p class="sub" style="margin-top:20px; text-align:center; opacity:.9">You + me = my kind of perfect.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Made with ❤️ by Your Baby
+    </footer>
+  </div>
+
+  <script>
+    // Countdown to 12:00 AM (Singapore time)
+    (function(){
+      const el = document.getElementById('countdown');
+      // Valentine’s Day in SG is Feb 14. We count down to 00:00 on Feb 14.
+      const target = new Date('2026-02-14T00:00:00+08:00').getTime();
+
+      function pad(n){ return String(n).padStart(2,'0'); }
+      function tick(){
+        const now = Date.now();
+        let diff = target - now;
+
+        if (diff <= 0){
+          el.textContent = 'It’s 12:00 AM — Happy Valentine’s Day, baby ❤️';
+          return;
+        }
+
+        const s = Math.floor(diff/1000);
+        const h = Math.floor(s/3600);
+        const m = Math.floor((s%3600)/60);
+        const sec = s%60;
+        el.textContent = `Countdown to Valentine's day ${pad(h)}:${pad(m)}:${pad(sec)}`;
+        requestAnimationFrame(() => setTimeout(tick, 250));
+      }
+      tick();
+
+      // Hearts
+      const hearts = document.querySelector('.hearts');
+      const count = 18;
+      for(let i=0;i<count;i++){
+        const h = document.createElement('span');
+        h.style.left = Math.random()*100 + 'vw';
+        h.style.animationDelay = (Math.random()*4) + 's';
+        h.style.animationDuration = (6 + Math.random()*6) + 's';
+        h.style.opacity = (0.4 + Math.random()*0.5);
+        hearts.appendChild(h);
+      }
+    })();
+  </script>
+</body>
+</html>
